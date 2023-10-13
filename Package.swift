@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 import PackageDescription
 
-let bnbPackageVersion: Version = "1.8.0-13"
+let bnbPackageVersion: Version = "1.8.0-14"
 
 let package = Package(
     name: "BNBFaceTrackerLite",
@@ -13,9 +13,9 @@ let package = Package(
             name: "BNBFaceTrackerLite",
             targets: [
                 "BNBFaceTrackerLite_Target",
-                "BNBFaceTrackerLite_BNBFaceTrackerLite_Target",
-                "BNBFaceTrackerLite_BNBFaceTrackerLite_Target",
-                "BNBFaceTrackerLite_BNBFaceTrackerLite_Target"
+                "BNBFaceTrackerLite_BNBSdkCore_Target",
+                "BNBFaceTrackerLite_BNBEffectPlayer_Target",
+                "BNBFaceTrackerLite_BNBScripting_Target"
             ]
         ),
     ],
