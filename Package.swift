@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 import PackageDescription
 
-let bnbPackageVersion: Version = "1.8.0-11"
+let bnbPackageVersion: Version = "1.8.0-13"
 
 let package = Package(
     name: "BNBFaceTrackerLite",
@@ -12,10 +12,10 @@ let package = Package(
         .library(
             name: "BNBFaceTrackerLite",
             targets: [
-                "BNBFaceTrackerLite",
-                "BNBSdkCore",
-                "BNBEffectPlayer",
-                "BNBScripting"
+                "BNBFaceTrackerLite_Target",
+                "BNBFaceTrackerLite_BNBFaceTrackerLite_Target",
+                "BNBFaceTrackerLite_BNBFaceTrackerLite_Target",
+                "BNBFaceTrackerLite_BNBFaceTrackerLite_Target"
             ]
         ),
     ],
@@ -35,9 +35,36 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(
-            name: "BNBFaceTrackerLite",
+            name: "BNBFaceTrackerLite_Target",
             url: "https://d2cm7wtcqqw29.cloudfront.net/1.8.0-58-g46079e7d74/BNBFaceTrackerLite.zip",
             checksum: "df7ed502989354c369a2532f8061bbd1ceb672ccd3c21537eba0c51e084d0fcc"
+        ),
+        .target(
+            name: "BNBFaceTrackerLite_BNBSdkCore_Target",
+            dependencies: [
+                .product(
+                    name: "BNBSdkCore",
+                    package: "BNBSdkCore"
+                ),
+            ]
+        ),
+        .target(
+            name: "BNBFaceTrackerLite_BNBEffectPlayer_Target",
+            dependencies: [
+                .product(
+                    name: "BNBEffectPlayer",
+                    package: "BNBEffectPlayer"
+                ),
+            ]
+        ),
+        .target(
+            name: "BNBFaceTrackerLite_BNBScripting_Target",
+            dependencies: [
+                .product(
+                    name: "BNBScripting",
+                    package: "BNBScripting"
+                ),
+            ]
         ),
     ]
 )
